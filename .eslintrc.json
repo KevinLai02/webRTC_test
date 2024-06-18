@@ -1,3 +1,32 @@
+// {
+//   "extends": "next/core-web-vitals"
+// }
 {
-  "extends": "next/core-web-vitals"
+  "root": true, // Make sure eslint picks up the config at the root of the directory
+  "parserOptions": {
+      "ecmaVersion": 2022, // Use the latest ecmascript standard
+      "sourceType": "module", // Allows using import/export statements
+      "ecmaFeatures": {
+          "jsx": true, // Enable JSX since we're using React
+          "tsx": true,
+          "ts": true
+      }
+  },
+  "extends": [
+      "next/core-web-vitals",
+      "next",
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:prettier/recommended"
+  ],
+  "plugins": ["react", "prettier"],
+  "rules": {
+      "react/prop-types": 0,
+      "prettier/prettier": [
+          "error",
+          {
+              "endOfLine": "auto"
+          }
+      ]
+  }
 }
